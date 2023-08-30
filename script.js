@@ -66,9 +66,9 @@ console.log(resultGeorg);
 
 let getMaxNumber = (...number) => {
     let max = number[0]
-    for(let i of number) {
-        if(i > max) {
-            max = i
+    for(let item of number) {
+        if(item > max) {
+            max = item
         }
     } return max
 }
@@ -81,26 +81,27 @@ console.log(maxResult);
 // დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიიღებს ერთ რიცხვს და გამოთვლის გადაცემული მნიშვნელობა კენტია თუ ლუწი; თუ ლუწია დააბრუნოს - ‘this number is even; თუ კენტია დააბრუნოს - this number is odd;
 
 
-
-
-
-
-
+let oddNumber = (number) => {
+    if(number % 2 === 0) {
+        return `${number} this number is even`;
+    } 
+    return `${number} this number is odd`;
+}
+let typeResult = oddNumber(17);
+console.log(typeResult);
 
 
 
 // 6.
 // მოცემულია მასივი:
-// let array = [1,2,3,4,5];
-
 // for ციკლის საშუალებით მიიღეთ reverse ვერისია, ანუ 5,4,3,2,1
 
 
+let array6 = [1,2,3,4,5];
 
-
-
-
-
+for (let item3 = array6.length - 1; item3 >= 0; item3--) {
+    console.log(array6[item3]);
+}
 
 
 
@@ -110,25 +111,38 @@ console.log(maxResult);
 // ეს ამოცანა დაწერეთ arrow function-ით და if ის პირობა ჩაწერეთ ახალი სინტაქსით;
 
 
+let userAge = (birthYear,yearNow) => {
+    let age = yearNow - birthYear
+    let result = age > 18 ? 'სრულწლოვანია' : 'არასწულყლოვანია'
+    return result
+}
 
-
-
+let ageResult = userAge(2000, 2023)
+console.log(ageResult);
 
 
 
 // 8.
 // მოცემულია მასივი
-// let array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // ციკლის საშუალებით შეამოწმეთ, თუ ამ მასივში არის რიცხვი 5 - მაშინ დალოგეთ - ‘არის’ და გააჩერეთ ციკლი
 
+let array8 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-
-
-
-
-
+for(let i of array8) {
+    if (i == 5) {
+        console.log('არის');
+        break
+    }
+}
 
 // 9.
 // მოცემულია მასივი
 // გამოიტანეთ ყველა რიცხვი 7 ის გარდა ( continue)
-//  let array5 = [1, 2, 3, 7, 6, 9];
+
+let array5 = [1, 2, 3, 7, 6, 9];
+    for(let i of array5) {
+        if(i == 7) {
+            continue
+        }
+    console.log(i);
+}
